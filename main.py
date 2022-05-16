@@ -6,14 +6,35 @@
 
 # Inclusion de modulos
 
-from flask import Flask
+from crypt import methods
+from flask import Flask, request
 
 app = Flask('__main__')
 
-@app.route('/', methods=['GET'])
 
+device = {
+    "code": "12312414",
+    "descrip": "Temp, sensor",
+    "value": 67
+}
+
+@app.route('/devices', methods=['GET'])
 def go_home():
-    return 'Hello World!'
+    return device
+    
+    #Save an user
+@app.route('/users', methods=['POST'])
+def save_users():
+    user = request.json
+    print(user)
+    return user
+    
+@app.route('/devices', methods=['POST'])
+def save_device():
+    device = request.json
+    return device
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')
