@@ -11,7 +11,7 @@ from flask import Flask, request
 
 app = Flask('__main__')
 
-@app.route()
+@app.route('/')
 def go_main():
     return "Hello world!"
     
