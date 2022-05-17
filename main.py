@@ -11,6 +11,11 @@ from flask import Flask, request
 
 app = Flask('__main__')
 
+@app.route()
+def go_main():
+    return "Hello world!"
+    
+
 
 device = {
     "code": "12312414",
