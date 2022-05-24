@@ -15,4 +15,4 @@ class Sensor:
         return self._sensor['coretemp']
     # Simulacion toma de valor de otro sensor
     def get_random_number(self):
-        return randint(0, 100)
+        return randint(0, 50)
