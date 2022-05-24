@@ -37,7 +37,8 @@ def save_users():
 @app.route('/devices', methods=['POST'])
 def save_device():
     device = request.json
-    return device
+    print(device)
+    return device, 201
 
 
 
