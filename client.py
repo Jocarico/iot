@@ -17,7 +17,7 @@ while True:
 
     data = {
         'id': 1,
-        'name': 'Temp sensor: ',
+        'name': 'inclinacion en grados: ',
         'value': s.get_random_number()
     }
 

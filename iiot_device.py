@@ -15,4 +15,11 @@ class Sensor:
         return self._sensor['coretemp']
     # Simulacion toma de valor de otro sensor
     def get_random_number(self):
-        return randint(0, 50)
+        grades = randint(0,50)
+        if grades > 15:
+            grados = str(grades)
+            print("Plancha desnivelada por: "+ grados + "grados")
+        else:
+            grados = str(grades)
+            print("Plancha nivelada. "+ grados + "grados")
+        return grades
