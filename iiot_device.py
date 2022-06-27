@@ -1,3 +1,6 @@
+from distutils.command.upload import upload
+import serial
+from email.contentmanager import raw_data_manager
 from random import randint
 #psutil almacena datos del hardware
 # import psutil
@@ -23,3 +26,14 @@ class Sensor:
             grados = str(grades)
             print("Plancha nivelada. "+ grados + "grados")
         return grades
+
+    def get_temperature(self):
+        #pyserial.org Documentation
+        ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
+
+        # 
+
+        while True:
+            raw_data = ser.readline()
+            # data = float(raw_data[0])
+            return raw_data

@@ -38,6 +38,8 @@ def save_users():
 def save_device():
     device = request.json
     print(device)
+    with open('devices.dat', 'a') as f:
+        f.write(str(device)+'\n')
     return device, 201
 
 
