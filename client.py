@@ -24,10 +24,7 @@ while True:
     # data = float(raw_data[0])
     arduinoData= bytes.decode(raw_data)
     
-    if (type(arduinoData) != int or type(arduinoData) != float):
-        print("El dato no esta nombrado como numero.")
-    else:
-
+    if type(arduinoData) == int :
         time.sleep(1)
 
 
@@ -43,11 +40,11 @@ while True:
         json_data = json.dumps(data)
 
         _conn.request('POST','/devices', json_data, headers=h)
-        _conn.close()
-
-
-
-        print(s.get_random_number())
-        # rint(s.get_temp())
-        time.sleep(1)
+    else:
+        print("El dato no esta nombrado como numero.")
+        
+    _conn.close()
+    print(s.get_random_number())
+    # rint(s.get_temp())
+    time.sleep(1)
     ser.close()
